@@ -44,5 +44,13 @@ public class FirstActivity extends AppCompatActivity {
                 else Toast.makeText(getApplicationContext(), "아이디 또는 비밀번호가 올바르지 않습니다", Toast.LENGTH_SHORT).show();
             }
         });
+
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
