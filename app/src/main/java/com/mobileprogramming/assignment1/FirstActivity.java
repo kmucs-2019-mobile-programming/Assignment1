@@ -35,6 +35,7 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String id = edit_id.getText().toString();
                 String password = edit_password.getText().toString();
+
                 if(userManager.checkUser(id, password)){
                     Toast.makeText(getApplicationContext(), "로그인 성공!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), ThirdAcitivity.class);

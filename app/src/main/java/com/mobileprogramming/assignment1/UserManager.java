@@ -1,6 +1,7 @@
 package com.mobileprogramming.assignment1;
 
 import android.os.Environment;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,6 +11,12 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class UserManager {
+    private static final int MIN_ID_LENGTH = 4;
+    private static final int MAX_ID_LENGTH = 12;
+
+    private static final int MIN_PASSWORD_LENGTH = 4;
+    private static final int MAX_PASSWORD_LENGTH = 20;
+
     private static final UserManager ourInstance = new UserManager();
 
     public static UserManager getInstance() {
@@ -20,24 +27,46 @@ public class UserManager {
 
     private UserManager() {
         users = new HashMap<>();
-        addUser("test", "test");
+        try {
+            addUser("test", "test");
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        } catch (DuplicateUserIDException e) {
+            e.printStackTrace();
+        }
     }
 
-    // 유저 정보 검사
+    // 회원 정보 검사
     public boolean checkUser(String id, String password){
-        if(!users.containsKey(id)) return false;
-        return users.get(id).equals(password);
+        String pw = users.get(id);
+        if(pw != null) return pw.equals(password);
+        return false;
     }
 
-    // 신규유저 추가
-    public boolean addUser(String id, String password){
-        if(users.containsKey(id)) return false;
-        users.put(id, password);
+    // 신규회원 추가
+    public boolean addUser(String id, String password) throws InvalidUserIDException, InvalidUserPasswordException, DuplicateUserIDException {
+        if(users.containsKey(id)) throw new DuplicateUserIDException();
+        if(isValidID(id) && isValidPassword(password)) {
+            users.put(id, password);
+            return true;
+        }
+        return false;
+    }
+
+    // 아이디 유효성 검사
+    private boolean isValidID(String id) throws InvalidUserIDException {
+        if(id.length() < MIN_ID_LENGTH || id.length() > MAX_ID_LENGTH) throw new InvalidUserIDException();
+        return true;
+    }
+
+    // 비밀번호 유효성 검사
+    private boolean isValidPassword(String password) throws InvalidUserPasswordException {
+        if(password.length() < MIN_PASSWORD_LENGTH || password.length() > MAX_PASSWORD_LENGTH) throw new InvalidUserPasswordException();
         return true;
     }
 
     // 가입회원정보 불러오기
-    public void loadUserDB() {
+    public void loadUserDB() throws InvalidUserDBException, DuplicateUserIDException {
         users.clear();
         String line = null;
         File saveFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/data"); // 저장 경로
@@ -55,6 +84,15 @@ public class UserManager {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InvalidUserException e) {
+            throw new InvalidUserDBException();
+        } catch (DuplicateUserIDException e) {
+            throw e;
         }
+    }
+
+    // 회원정보 초기화
+    public void clearUserDB(){
+        users.clear();
     }
 }
