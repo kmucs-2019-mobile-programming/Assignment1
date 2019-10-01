@@ -1,5 +1,6 @@
 package com.mobileprogramming.assignment1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -8,13 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class FirstActivity extends AppCompatActivity {
     UserManager userManager;
@@ -43,6 +37,9 @@ public class FirstActivity extends AppCompatActivity {
                 String password = edit_password.getText().toString();
                 if(userManager.checkUser(id, password)){
                     Toast.makeText(getApplicationContext(), "로그인 성공!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), ThirdAcitivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 else Toast.makeText(getApplicationContext(), "아이디 또는 비밀번호가 올바르지 않습니다", Toast.LENGTH_SHORT).show();
             }
