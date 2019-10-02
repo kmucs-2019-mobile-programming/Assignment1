@@ -1,10 +1,23 @@
 <resources>
     <string name="app_name">Assignment1</string>
-    <string name="user_id">회원 ID</string>
-    <string name="user_password">회원 비밀번호</string>
+    <string name="user_id">ID</string>
+    <string name="user_password">비밀번호</string>
+    <string name="user_name">이름</string>
+    <string name="user_phone">전화번호</string>
+    <string name="user_address">주소</string>
+    <string name="user_agree">이용약관동의(필수)</string>
+    <string name="user_terms">이용약관\n
+        다음의 조건을 지켜주세요.\n
+        책임— 자신이 한 편집에 대해 책임을 집니다. (재단은 그 콘텐츠를 호스팅만 합니다.)\n
+        예절— 예절을 존중하며 다른 사용자를 괴롭히지 않습니다.\n
+        합법적 행위— 저작권법이나 그 밖의 법을 위반하지 않습니다.\n
+        무해— 재단의 기술 기반 시설을 손상하지 않습니다.\n
+        이용 약관과 정책— 재단의 웹사이트를 방문하거나 공동체에 참여할 때 아래의 이용 약관과 적용 가능한 공동체 정책을 준수합니다.</string>
+
     <string name="btn_login">로그인</string>
     <string name="btn_register">회원가입</string>
+
     <string name="duplicate_user_id_exception">이미 사용중인 아이디입니다</string>
     <string name="invalid_user_id_exception">아이디는 4 ~ 12자리의 영문 대소문자와 숫자로만 입력하세요</string>
     <string name="invalid_user_password_exception">비밀번호는 4 ~ 20자리의 영문 대소문자와 숫자, 특수문자를 반드시 포함하여 입력하세요</string>
-ㄴ</resources>
+</resources>
