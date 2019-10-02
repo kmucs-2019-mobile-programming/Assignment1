@@ -17,6 +17,8 @@ public class UserManager {
     private static final int MIN_PASSWORD_LENGTH = 4;
     private static final int MAX_PASSWORD_LENGTH = 20;
 
+    private static final char[] SPECIAL_CHARACTER = {'!', '@', '#', '$', '%', '^', '&', '*', '(', ')'};
+
     private static final UserManager ourInstance = new UserManager();
 
     public static UserManager getInstance() {
@@ -56,13 +58,30 @@ public class UserManager {
     // 아이디 유효성 검사
     private boolean isValidID(String id) throws InvalidUserIDException {
         if(id.length() < MIN_ID_LENGTH || id.length() > MAX_ID_LENGTH) throw new InvalidUserIDException();
+        for(int i = 0; i < id.length(); i++){
+            if(!Character.isLetterOrDigit(id.charAt(i))) throw new InvalidUserIDException();
+        }
         return true;
+    }
+
+    private boolean isSpecial(char ch){
+        for(char c : SPECIAL_CHARACTER) if(c == ch) return true;
+        return false;
     }
 
     // 비밀번호 유효성 검사
     private boolean isValidPassword(String password) throws InvalidUserPasswordException {
         if(password.length() < MIN_PASSWORD_LENGTH || password.length() > MAX_PASSWORD_LENGTH) throw new InvalidUserPasswordException();
-        return true;
+        boolean upper = false, lower = false, special = false, digit = false;
+        for(int i = 0; i < password.length(); i++){
+            if(!Character.isLetterOrDigit(password.charAt(i)) && !isSpecial(password.charAt(i))) throw new InvalidUserPasswordException();
+            if(Character.isUpperCase(password.charAt(i))) upper = true;
+            else if(Character.isLowerCase(password.charAt(i))) lower = true;
+            else if(isSpecial(password.charAt(i))) special = true;
+            else if(Character.isDigit(password.charAt(i))) digit = true;
+        }
+        if(upper && lower && special && digit) return true;
+        throw new InvalidUserPasswordException();
     }
 
     // 가입회원정보 불러오기
