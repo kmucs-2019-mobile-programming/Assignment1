@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_id"
+        android:inputType="textPassword"
         android:hint="@string/user_password" />
 
     <Button
@@ -29,12 +30,5 @@
         android:layout_below="@id/btn_login"
         android:id="@+id/btn_register"
         android:text="@string/btn_register"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_register"
-        android:id="@+id/btn_test"
-        android:text="TEST"/>
 
 </RelativeLayout>

@@ -20,6 +20,11 @@
     <string name="duplicate_user_id_exception">이미 사용중인 아이디입니다</string>
     <string name="invalid_user_id_exception">아이디는 4 ~ 12자리의 영문 대소문자와 숫자로만 입력하세요</string>
     <string name="invalid_user_password_exception">비밀번호는 4 ~ 20자리의 영문 대소문자와 숫자, 특수문자를 반드시 포함하여 입력하세요</string>
+    <string name="invalid_user_name_exception">이름을 입력해주세요</string>
+    <string name="invalid_user_phone_exception">전화번호를 입력해주세요</string>
+    <string name="invalid_user_address_exception">주소를 입력해주세요</string>
 
     <string name="user_terms_agree_exception">이용약관에 동의해주세요</string>
+
+    <string name="success_user_register">회원가입 되었습니다</string>
 </resources>

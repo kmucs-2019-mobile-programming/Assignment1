@@ -19,6 +19,5 @@
         <activity android:name=".SecondActivity"></activity>
         <activity android:name=".ThirdAcitivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

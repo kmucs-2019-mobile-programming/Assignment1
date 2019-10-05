@@ -22,7 +22,7 @@
 - [x] 2. ID(EditView, 중복검사), 비밀번호(EditView, 자릿수/특수키 등 규칙 체크) 
 - [x] 3. 이름/전화번호/주소(EditView)
 - [x] 4. 개인정보 사용 동의 간략 약관(TextView), 동의 여부(Radio Button, Decline/Accept)
-- [ ] 5. 회원정보는 파일로 저장하고 첫번째 페이지로 이동
+- [x] 5. 회원정보는 파일로 저장하고 첫번째 페이지로 이동
 
 3. ##### 세번째 화면 (Constraint Layout, Table Layout, Grid Layout, Frame Layout 중 하나 사용)
 - [ ] 1. 첫번째 페이지에서 ID, 비밀번호 입력 시 정상이고 로그인 버튼 클릭 시 화면 출력
