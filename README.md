@@ -25,7 +25,7 @@
 - [x] 5. 회원정보는 파일로 저장하고 첫번째 페이지로 이동
 
 3. ##### 세번째 화면 (Constraint Layout, Table Layout, Grid Layout, Frame Layout 중 하나 사용)
-- [ ] 1. 첫번째 페이지에서 ID, 비밀번호 입력 시 정상이고 로그인 버튼 클릭 시 화면 출력
+- [x] 1. 첫번째 페이지에서 ID, 비밀번호 입력 시 정상이고 로그인 버튼 클릭 시 화면 출력
 - [ ] 2. 세번째 화면을 간단한 기능을 수행하도록 구성 (ex. 간편 계산기 등)
 - [ ] 3. View을 상속한 여러가지 위젯을 사용하여 화면을 구성(기능에 맞는 위젯 선택하여 구성)
      View Group을 상속한 위젯 ListView, GridView, AdapterView, ToolBar 등
