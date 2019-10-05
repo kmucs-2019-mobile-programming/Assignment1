@@ -1,16 +1,25 @@
 package com.mobileprogramming.assignment1;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class UserManager {
+    private static final String DB_NAME = "UserDB.db";
+
     private static final int MIN_ID_LENGTH = 4;
     private static final int MAX_ID_LENGTH = 12;
 
@@ -20,39 +29,40 @@ public class UserManager {
     private static final char[] SPECIAL_CHARACTER = {'!', '@', '#', '$', '%', '^', '&', '*', '(', ')'};
 
     private static final UserManager ourInstance = new UserManager();
+    private static Context context = null;
 
     public static UserManager getInstance() {
         return ourInstance;
     }
 
-    HashMap<String, String> users;
+    public static void setContext(Context c){
+        context = c;
+    }
+
+    private HashMap<String, User> users;
 
     private UserManager() {
         users = new HashMap<>();
-        try {
-            addUser("test", "test");
-        } catch (InvalidUserException e) {
-            e.printStackTrace();
-        } catch (DuplicateUserIDException e) {
-            e.printStackTrace();
-        }
+    }
+
+    public HashMap<String, User> getUsers() {
+        return users;
     }
 
     // 회원 정보 검사
-    public boolean checkUser(String id, String password){
-        String pw = users.get(id);
-        if(pw != null) return pw.equals(password);
-        return false;
+    public User logIn(String id, String password){
+        User user = users.get(id);
+        if(user != null && user.getPassword().equals(password)) return user;
+        return null;
     }
 
-    // 신규회원 추가
-    public boolean addUser(String id, String password) throws InvalidUserIDException, InvalidUserPasswordException, DuplicateUserIDException {
-        if(users.containsKey(id)) throw new DuplicateUserIDException();
-        if(isValidID(id) && isValidPassword(password)) {
-            users.put(id, password);
-            return true;
+    // 회원 추가
+    public void addUser(User user) throws InvalidUserIDException, InvalidUserPasswordException, DuplicateUserIDException {
+        if(users.containsKey(user.getId())) throw new DuplicateUserIDException();
+        if(isValidID(user.getId()) && isValidPassword(user.getPassword())) {
+            users.put(user.getId(), user);
+            saveUserDB(user);
         }
-        return false;
     }
 
     // 아이디 유효성 검사
@@ -84,29 +94,59 @@ public class UserManager {
         throw new InvalidUserPasswordException();
     }
 
-    // 가입회원정보 불러오기
-    public void loadUserDB() throws InvalidUserDBException, DuplicateUserIDException {
+    // 회원정보 불러오기
+    public void loadUserDB() throws InvalidUserDBException {
         users.clear();
         String line = null;
-        File saveFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/data"); // 저장 경로
-        if(!saveFile.exists()){
-            saveFile.mkdir();
-        }
         try {
-            BufferedReader buf = new BufferedReader(new FileReader(saveFile+"/UserDB.db"));
-            while((line=buf.readLine())!=null){
+            BufferedReader buf = new BufferedReader(new FileReader(DB_NAME));
+            while((line = buf.readLine())!=null){
                 String[] token = line.split(" ");
-                addUser(token[0], token[1]);
+                addUser(new User(token[0], token[1], token[2], token[3], token[4]));
+            }
+            buf.close();
+        } catch (FileNotFoundException e) {
+            saveAllUserDB();
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidUserException | DuplicateUserIDException e) {
+            clearUserDB();
+            saveAllUserDB();
+            throw new InvalidUserDBException();
+        }
+    }
+
+    // 회원정보 저장
+    public void saveUserDB(User user){
+        String line = null;
+        try {
+            BufferedWriter buf = new BufferedWriter(new FileWriter(DB_NAME, true));
+            buf.write(users.toString() + " ");
+            buf.newLine();
+            buf.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 회원정보 전체 저장
+    public void saveAllUserDB(){
+        String line = null;
+        try {
+            BufferedWriter buf = new BufferedWriter(new FileWriter(DB_NAME));
+            for(HashMap.Entry<String, User> entry : users.entrySet()){
+                User user = entry.getValue();
+                buf.write(users.toString() + " ");
+                buf.newLine();
             }
             buf.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InvalidUserException e) {
-            throw new InvalidUserDBException();
-        } catch (DuplicateUserIDException e) {
-            throw e;
         }
     }
 
