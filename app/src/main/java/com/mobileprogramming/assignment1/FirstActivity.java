@@ -53,17 +53,20 @@ public class FirstActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id = edit_id.getText().toString();
-                String password = edit_password.getText().toString();
+                Intent intent2 = new Intent(getApplicationContext(), ThirdAcitivity.class);
+                startActivity(intent2);
 
-                User user = userManager.logIn(id, password);
-
-                if(user != null){
-                    Toast.makeText(getApplicationContext(), "로그인 성공!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), ThirdAcitivity.class);
-                    startActivity(intent);
-                }
-                else Toast.makeText(getApplicationContext(), "아이디 또는 비밀번호가 올바르지 않습니다", Toast.LENGTH_SHORT).show();
+//                String id = edit_id.getText().toString();
+//                String password = edit_password.getText().toString();
+//
+//                User user = userManager.logIn(id, password);
+//
+//                if(user != null){
+//                    Toast.makeText(getApplicationContext(), "로그인 성공!", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(getApplicationContext(), ThirdAcitivity.class);
+//                    startActivity(intent);
+//                }
+//                else Toast.makeText(getApplicationContext(), "아이디 또는 비밀번호가 올바르지 않습니다", Toast.LENGTH_SHORT).show();
             }
         });
 
