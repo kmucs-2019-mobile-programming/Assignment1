@@ -4,7 +4,188 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:useDefaultMargins="false"
-    android:id="@+id/gridlayout">
+    android:id="@+id/gridlayout"
+    android:rowCount="6"
+    android:columnCount="4">
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="4"
+        android:id="@+id/textview_title"
+        android:text="@string/calculator"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:background="#00FFFF"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="4"
+        android:id="@+id/textview_screen"
+        android:gravity="center|right"
+        android:textSize="60dp"
+        android:textColor="#FFFFFF"
+        android:padding="10dp"
+        android:background="#000000"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_clear"
+        android:text="@string/numpadclear"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_backspace"
+        android:text="@string/numpadbackspace"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_div"
+        android:text="@string/numpaddiv"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_mul"
+        android:text="@string/numpadmul"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_7"
+        android:text="@string/numpad7"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_8"
+        android:text="@string/numpad8"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_9"
+        android:text="@string/numpad9"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_sub"
+        android:text="@string/numpadsub"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_4"
+        android:text="@string/numpad4"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_5"
+        android:text="@string/numpad5"
+        android:textSize="50sp"/>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_6"
+        android:text="@string/numpad6"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_add"
+        android:text="@string/numpadadd"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_1"
+        android:text="@string/numpad1"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_2"
+        android:text="@string/numpad2"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_3"
+        android:text="@string/numpad3"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_run"
+        android:text="@string/numpadrun"
+        android:layout_rowSpan="2"
+        android:textSize="50sp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:id="@+id/btn_0"
+        android:text="@string/numpad0"
+        android:textSize="50sp"
+        android:layout_columnSpan="3"/>
 
 </GridLayout>

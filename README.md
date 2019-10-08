@@ -5,6 +5,16 @@
 
 
 
+## 개발환경
+
+Android Studio 3.5
+Build #AI-191.8026.42.35.5791312, built on August 9, 2019
+JRE: 1.8.0_202-release-1483-b49-5587405 x86_64
+JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+macOS 10.14.6
+
+
+
 ## 개인 과제 공지
 
 [배점] 첫번째 화면 3점, 두번째 화면 3점, 세번째 화면 3점, 유저관리 1점 
@@ -26,8 +36,8 @@
 
 3. ##### 세번째 화면 (Constraint Layout, Table Layout, Grid Layout, Frame Layout 중 하나 사용)
 - [x] 1. 첫번째 페이지에서 ID, 비밀번호 입력 시 정상이고 로그인 버튼 클릭 시 화면 출력
-- [ ] 2. 세번째 화면을 간단한 기능을 수행하도록 구성 (ex. 간편 계산기 등)
-- [ ] 3. View을 상속한 여러가지 위젯을 사용하여 화면을 구성(기능에 맞는 위젯 선택하여 구성)
+- [x] 2. 세번째 화면을 간단한 기능을 수행하도록 구성 (ex. 간편 계산기 등)
+- [x] 3. View을 상속한 여러가지 위젯을 사용하여 화면을 구성(기능에 맞는 위젯 선택하여 구성)
      View Group을 상속한 위젯 ListView, GridView, AdapterView, ToolBar 등
      Text View을 상속한 CheckBox, Switch, ToggleButton, RadioButton 등
      ImageView, ImageButton 등

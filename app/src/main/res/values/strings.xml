@@ -27,4 +27,25 @@
     <string name="user_terms_agree_exception">이용약관에 동의해주세요</string>
 
     <string name="success_user_register">회원가입 되었습니다</string>
+
+    <string name="calculator">간편 계산기</string>
+
+    <string name="numpad0">0</string>
+    <string name="numpad1">1</string>
+    <string name="numpad2">2</string>
+    <string name="numpad3">3</string>
+    <string name="numpad4">4</string>
+    <string name="numpad5">5</string>
+    <string name="numpad6">6</string>
+    <string name="numpad7">7</string>
+    <string name="numpad8">8</string>
+    <string name="numpad9">9</string>
+    <string name="numpadbackspace">&lt;-</string>
+    <string name="numpadadd">+</string>
+    <string name="numpadsub">-</string>
+    <string name="numpadmul">*</string>
+    <string name="numpaddiv">/</string>
+    <string name="numpadclear">C</string>
+    <string name="numpadrun">=</string>
+
 </resources>
