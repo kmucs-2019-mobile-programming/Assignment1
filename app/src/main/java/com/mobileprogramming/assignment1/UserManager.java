@@ -111,21 +111,21 @@ public class UserManager {
     // 이름 유효성 검사
     private boolean isValidName(String name) throws InvalidUserNameException{
         if(name.length() == 0) throw new InvalidUserNameException();
-        for(int i=0; i<name.length(); i++) if(name.charAt(i)==' ') throw new InvalidUserNameException();
+        for(int i=0; i<name.length(); i++) if(name.charAt(i)==' ' || name.charAt(i)=='\n') throw new InvalidUserNameException();
         return true;
     }
 
     // 전화번호 유효성 검사
     private boolean isValidPhone(String phone) throws InvalidUserPhoneException{
         if(phone.length() == 0) throw new InvalidUserPhoneException();
-        for(int i=0; i<phone.length(); i++) if(phone.charAt(i)==' ') throw new InvalidUserPhoneException();
+        for(int i=0; i<phone.length(); i++) if(phone.charAt(i)==' ' || phone.charAt(i)=='\n') throw new InvalidUserPhoneException();
         return true;
     }
 
     // 주소 유효성 검사
     private boolean isValidAddress(String address) throws InvalidUserAddressException{
         if(address.length() == 0) throw new InvalidUserAddressException();
-        for(int i=0; i<address.length(); i++) if(address.charAt(i)==' ') throw new InvalidUserAddressException();
+        for(int i=0; i<address.length(); i++) if(address.charAt(i)==' ' || address.charAt(i)=='\n') throw new InvalidUserAddressException();
         return true;
     }
 

@@ -32,7 +32,7 @@ public class FirstActivity extends AppCompatActivity {
         try {
             userManager.loadUserDB();
         } catch (InvalidUserDBException e) {
-            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.invalid_user_db_exception), Toast.LENGTH_SHORT).show();
         }
 
         if(userManager.getUsers().isEmpty()){
