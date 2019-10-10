@@ -23,7 +23,7 @@
     <string name="invalid_user_name_exception">사용할 수 없는 이름입니다</string>
     <string name="invalid_user_phone_exception">사용할 수 없는 전화번호입니다</string>
     <string name="invalid_user_address_exception">사용할 수 없는 주소입니다</string>
-    <string name="invalid_user_db_exception">데이터베이스가 </string>
+    <string name="invalid_user_db_exception">데이터베이스에 문제가 감지되어 초기화되었습니다</string>
 
     <string name="user_terms_agree_exception">이용약관에 동의해주세요</string>
 

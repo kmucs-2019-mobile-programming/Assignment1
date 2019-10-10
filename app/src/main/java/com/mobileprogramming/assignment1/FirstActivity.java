@@ -34,16 +34,6 @@ public class FirstActivity extends AppCompatActivity {
         } catch (InvalidUserDBException e) {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.invalid_user_db_exception), Toast.LENGTH_SHORT).show();
         }
-
-        if(userManager.getUsers().isEmpty()){
-            try{
-                userManager.registerUser(new User("test", "aA1!", "test", "test", "test"));
-                Toast.makeText(getApplicationContext(), "Add User", Toast.LENGTH_SHORT).show();
-            } catch (InvalidUserException | DuplicateUserIDException e) {
-                e.printStackTrace();
-            }
-        }
-
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
 

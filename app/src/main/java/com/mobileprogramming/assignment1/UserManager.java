@@ -148,7 +148,7 @@ public class UserManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        catch (InvalidUserException | DuplicateUserIDException e) {
+        catch (InvalidUserException | DuplicateUserIDException | ArrayIndexOutOfBoundsException e) {
             clearUserDB();
             saveAllUserDB();
             throw new InvalidUserDBException();
