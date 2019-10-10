@@ -8,9 +8,13 @@
 ## 개발환경
 
 Android Studio 3.5
+
 Build #AI-191.8026.42.35.5791312, built on August 9, 2019
+
 JRE: 1.8.0_202-release-1483-b49-5587405 x86_64
+
 JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+
 macOS 10.14.6
 
 
@@ -44,6 +48,6 @@ macOS 10.14.6
 
 ##### *과제 제출 
 
-- [ ] 이캠퍼스 과제 공지 게시판에 구현내용(Readme 파일) 및 깃허브 주소 기재
+- [x] 이캠퍼스 과제 공지 게시판에 구현내용(Readme 파일) 및 깃허브 주소 기재
   소스 파일은 압축(ZIP)하여 등록
-- [ ] 깃허브에 제출할 과제명으로 Repository 생성 후 소스파일 upload 및 Readme 파일 등록 
+- [x] 깃허브에 제출할 과제명으로 Repository 생성 후 소스파일 upload 및 Readme 파일 등록 
