@@ -5,6 +5,12 @@
 
 
 
+## 깃허브 주소
+
+https://github.com/kmucs-2019-mobile-programming/Assignment1
+
+
+
 ## 테스트 환경
 
 1. ##### 안드로이드 스튜디오
