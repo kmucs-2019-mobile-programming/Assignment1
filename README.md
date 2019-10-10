@@ -5,17 +5,29 @@
 
 
 
-## 개발환경
+## 테스트 환경
 
-Android Studio 3.5
+1. ##### 안드로이드 스튜디오
 
-Build #AI-191.8026.42.35.5791312, built on August 9, 2019
+   Android Studio 3.5
 
-JRE: 1.8.0_202-release-1483-b49-5587405 x86_64
+   Build #AI-191.8026.42.35.5791312, built on August 9, 2019
 
-JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+   Android SDK Build-Tools : 29.0.2
 
-macOS 10.14.6
+2. ##### 자바 버전
+
+   JRE: 1.8.0_202-release-1483-b49-5587405 x86_64
+
+   JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
+
+3. ##### 운영체제
+
+   macOS 10.15
+
+4. ##### 테스트 기기
+
+   갤럭시 s9+ (Android 9.0) 실기기
 
 
 
