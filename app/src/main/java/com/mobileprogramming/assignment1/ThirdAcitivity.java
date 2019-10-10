@@ -91,10 +91,10 @@ public class ThirdAcitivity extends AppCompatActivity implements View.OnClickLis
                     int p=getOpPriority(s.charAt(i));
                     while(!opstack.isEmpty()){
                         int nowp=getOpPriority(opstack.peek());
-                        if(nowp<p) {
+                        if(nowp<=p) {
                             char op=opstack.pop();
-                            double a=numstack.pop();
                             double b=numstack.pop();
+                            double a=numstack.pop();
                             numstack.add(calcTwo(a,b,op));
                         }
                         else break;
@@ -108,8 +108,8 @@ public class ThirdAcitivity extends AppCompatActivity implements View.OnClickLis
         while(!opstack.isEmpty()){
             char op=opstack.pop();
             int nowp=getOpPriority(op);
-            double a=numstack.pop();
             double b=numstack.pop();
+            double a=numstack.pop();
             numstack.add(calcTwo(a,b,op));
         }
         String res=String.valueOf(numstack.pop());
